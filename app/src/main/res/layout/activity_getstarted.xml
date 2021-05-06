@@ -12,32 +12,33 @@
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_food" />
+
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="20dp">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/getStartedButton"
-        android:textColor="@color/white"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:background="@drawable/button_background"
-        android:visibility="invisible"
-        android:gravity="center"
-        android:text="Get Started!"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp">
 
-    <ProgressBar
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:outlineAmbientShadowColor="@color/black"
+        <Button
+            android:id="@+id/getStartedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="Get Started!"
+            android:textColor="@color/white"
+            android:visibility="visible" />
 
-        android:layout_gravity="center"
-        android:id="@+id/loader"/>
+        <ProgressBar
+            android:id="@+id/loader"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            android:layout_gravity="center"
+            android:outlineAmbientShadowColor="@color/black" />
 
     </FrameLayout>
 
