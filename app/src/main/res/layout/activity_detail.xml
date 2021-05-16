@@ -288,7 +288,7 @@
             android:paddingStart="@dimen/_20sdp"
             android:paddingEnd="@dimen/_20sdp"
             android:background="@drawable/btn_bg3"
-            android:text="YOutube"/>
+            android:text="Link to Recipe"/>
 
     </LinearLayout>
     </androidx.core.widget.NestedScrollView>
