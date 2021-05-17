@@ -1,26 +1,36 @@
-package com.group19.recipeapp
+package com.group19.foodrecipeapp
 
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.group19.recipeapp.entities.MealResponse
-import com.group19.recipeapp.mealDB.getMealDBData
-import com.group19.recipeapp.mealDB.retrofit
+import com.group19.foodrecipeapp.entities.MealResponse
+import com.group19.foodrecipeapp.interfaces.GetDataService
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.coroutines.CoroutineContext
 
 
-class DetailActivity : BaseActivity() {
+class DetailActivity : AppCompatActivity(), CoroutineScope {
 
     var youtubeLink = ""
+    private lateinit var job: Job
+    override val coroutineContext: CoroutineContext
+    get() = job + Dispatchers.Main
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+        job = Job()
 
         var id = intent.getStringExtra("id")
 
@@ -38,8 +48,13 @@ class DetailActivity : BaseActivity() {
 
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        job.cancel()
+    }
+
     fun getSpecificItem(id:String) {
-        val service = retrofit.retrofitInstance!!.create(getMealDBData::class.java)
+        val service = MealDBRetrofit.retrofitInstance!!.create(GetDataService::class.java)
         val call = service.getSpecificItem(id)
         call.enqueue(object : Callback<MealResponse> {
             override fun onFailure(call: Call<MealResponse>, t: Throwable) {
@@ -81,6 +96,11 @@ class DetailActivity : BaseActivity() {
                 tvIngredients.text = ingredient
                 tvInstructions.text = response.body()!!.mealsEntity[0].strinstructions
 
+                if (response.body()!!.mealsEntity[0].strsource != null){
+                    youtubeLink = response.body()!!.mealsEntity[0].strsource
+                }else{
+                    btnYoutube.visibility = View.GONE
+                }
             }
 
         })

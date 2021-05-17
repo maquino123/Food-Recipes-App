@@ -1,4 +1,4 @@
-package com.group19.recipeapp.adapter
+package com.group19.foodrecipeapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.group19.recipeapp.R
-import com.group19.recipeapp.entities.CategoryItems
-import kotlinx.android.synthetic.main.meal_category.view.*
+import com.group19.foodrecipeapp.R
+import com.group19.foodrecipeapp.entities.CategoryItems
+import kotlinx.android.synthetic.main.activity_dish.view.*
 
-class IngredientCategoryAdapter: RecyclerView.Adapter<IngredientCategoryAdapter.RecipeViewHolder>() {
+class MainCategoryAdapter: RecyclerView.Adapter<MainCategoryAdapter.RecipeViewHolder>() {
 
     var listener: OnItemClickListener? = null
     var ctx: Context? = null
@@ -29,12 +29,14 @@ class IngredientCategoryAdapter: RecyclerView.Adapter<IngredientCategoryAdapter.
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         ctx = parent.context
-        return RecipeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.ingredient_category,parent,false))
+        return RecipeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.activity_ingredient,parent,false))
     }
 
     override fun getItemCount(): Int {
         return arrMainCategory.size
     }
+
+
 
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
 

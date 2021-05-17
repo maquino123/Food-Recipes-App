@@ -1,27 +1,29 @@
-package com.group19.recipeapp.database
+package com.group19.foodrecipeapp
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.group19.recipeapp.query.RecipeQuery
-import com.group19.recipeapp.entities.*
-import com.group19.recipeapp.entities.converter.CategoryListConverter
-import com.group19.recipeapp.entities.converter.MealListConverter
+import com.group19.foodrecipeapp.entities.*
 
-@Database(entities = [Recipes::class,CategoryItems::class,Category::class,Meal::class,MealsItems::class],version = 1,exportSchema = false)
-@TypeConverters(CategoryListConverter::class,MealListConverter::class)
+@Database(entities = [Recipes::class,
+                      CategoryItems::class,
+                      Category::class,
+                      Meal::class,
+                      MealItems::class],version = 1,exportSchema = false)
+@TypeConverters(Converter::class)
 abstract class RecipeDatabase: RoomDatabase() {
 
     companion object{
 
-        var recipesDatabase:RecipeDatabase? = null
+        var recipesDatabase: RecipeDatabase? = null
 
         @Synchronized
-        fun getDatabase(context: Context): RecipeDatabase{
+        fun getDatabase(context: Context): RecipeDatabase {
             if (recipesDatabase == null){
                 recipesDatabase = Room.databaseBuilder(
+
                         context,
                         RecipeDatabase::class.java,
                         "recipe.db"
@@ -33,5 +35,5 @@ abstract class RecipeDatabase: RoomDatabase() {
         }
     }
 
-    abstract fun recipeDao():RecipeQuery
+    abstract fun recipeDao(): RecipeQuery
 }

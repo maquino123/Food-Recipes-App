@@ -1,7 +1,7 @@
-package com.group19.recipeapp.entities
+package com.group19.foodrecipeapp.entities
 
 import androidx.room.*
-import com.group19.recipeapp.entities.converter.CategoryListConverter
+import com.group19.foodrecipeapp.Converter
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
@@ -13,6 +13,6 @@ data class Category(
     @ColumnInfo(name = "categoryItems")
     @Expose
     @SerializedName("categories")
-    @TypeConverters(CategoryListConverter::class)
+    @TypeConverters(Converter::class)
     var categorieitems: List<CategoryItems>? = null
 )

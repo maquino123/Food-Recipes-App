@@ -1,4 +1,4 @@
-package com.group19.recipeapp.entities
+package com.group19.foodrecipeapp.entities
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

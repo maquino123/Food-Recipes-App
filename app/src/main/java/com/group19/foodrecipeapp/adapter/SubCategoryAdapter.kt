@@ -1,4 +1,4 @@
-package com.group19.recipeapp.adapter
+package com.group19.foodrecipeapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,33 +6,33 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.group19.recipeapp.R
-import com.group19.recipeapp.entities.MealsItems
-import kotlinx.android.synthetic.main.meal_category.view.*
+import com.group19.foodrecipeapp.R
+import com.group19.foodrecipeapp.entities.MealItems
+import kotlinx.android.synthetic.main.activity_dish.view.*
 
-class MealCategoryAdapter: RecyclerView.Adapter<MealCategoryAdapter.RecipeViewHolder>() {
+class SubCategoryAdapter: RecyclerView.Adapter<SubCategoryAdapter.RecipeViewHolder>() {
 
-    var listener: OnItemClickListener? = null
+    var listener: SubCategoryAdapter.OnItemClickListener? = null
     var ctx :Context? = null
-    var arrSubCategory = ArrayList<MealsItems>()
+    var arrSubCategory = ArrayList<MealItems>()
     class RecipeViewHolder(view: View): RecyclerView.ViewHolder(view){
 
     }
 
-    fun setData(arrData : List<MealsItems>){
-        arrSubCategory = arrData as ArrayList<MealsItems>
+    fun setData(arrData : List<MealItems>){
+        arrSubCategory = arrData as ArrayList<MealItems>
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
         ctx = parent.context
-        return RecipeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.meal_category,parent,false))
+        return RecipeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.activity_dish,parent,false))
     }
 
     override fun getItemCount(): Int {
         return arrSubCategory.size
     }
 
-    fun setClickListener(listener1: OnItemClickListener){
+    fun setClickListener(listener1: SubCategoryAdapter.OnItemClickListener){
         listener = listener1
     }
 

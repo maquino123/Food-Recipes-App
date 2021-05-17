@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.group19.recipeapp">
+    package="com.group19.foodrecipeapp">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
         android:theme="@style/Theme.RecipeApp">
-        <activity android:name="com.group19.recipeapp.HomeScreen"
+        <activity android:name="com.group19.foodrecipeapp.SplashActivity"
             android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.group19.recipeapp.DetailActivity"
+        <activity android:name="com.group19.foodrecipeapp.HomeActivity"
+            android:screenOrientation="locked"/>
+
+        <activity android:name="com.group19.foodrecipeapp.DetailActivity"
             android:screenOrientation="locked"/>
     </application>
 

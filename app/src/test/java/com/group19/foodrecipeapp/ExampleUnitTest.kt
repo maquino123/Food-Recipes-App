@@ -1,4 +1,4 @@
-package com.group19.recipeapp
+package com.group19.foodrecipeapp
 
 import org.junit.Test
 
