@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_80sdp"
-        app:cardBackgroundColor="@color/yellow"
+        app:cardBackgroundColor="@color/paleOrange"
         android:layout_margin="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardElevation="@dimen/_5sdp">
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:text="Dish Name"
                 android:textSize="@dimen/_11ssp"
-                android:textColor="@color/white"
+                android:textColor="@color/darkGray"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentStart="true"
                 android:maxEms="10"

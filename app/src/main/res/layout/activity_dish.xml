@@ -12,7 +12,8 @@
         android:layout_height="@dimen/_260sdp"
         android:layout_margin="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_10sdp"
-        app:cardElevation="@dimen/_5sdp">
+        app:cardElevation="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/transparent">
 
         <ImageView
             android:id="@+id/img_dish"

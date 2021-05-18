@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/darkGray"
     tools:context=".DetailActivity">
 
 
@@ -210,7 +210,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
             app:cardCornerRadius="@dimen/_10sdp"
-            app:cardElevation="@dimen/_5sdp">
+            app:cardElevation="@dimen/_5sdp"
+            app:cardBackgroundColor="@color/paleBlue">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -221,7 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_10ssp"
-                    android:textColor="@color/hintTextColor"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:fontFamily="@font/gilroy_light"
                     android:paddingTop="@dimen/_10sdp"
@@ -244,7 +245,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
-            app:cardBackgroundColor="@color/pink"
+            app:cardBackgroundColor="@color/paleOrange"
             app:cardCornerRadius="@dimen/_10sdp"
             app:cardElevation="@dimen/_5sdp">
             <LinearLayout
@@ -257,7 +258,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/_10ssp"
-                    android:textColor="@color/hintTextColor"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:fontFamily="@font/gilroy_light"
                     android:paddingTop="@dimen/_10sdp"
@@ -272,7 +273,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/btnYoutube"
-            android:textColor="@color/white"
+            android:textColor="@color/gray"
             android:layout_margin="@dimen/_10sdp"
             android:paddingStart="@dimen/_20sdp"
             android:paddingEnd="@dimen/_20sdp"
